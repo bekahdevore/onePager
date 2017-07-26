@@ -3,8 +3,9 @@ title: onePager
 account: kwlmi
 server: shinyapps.io
 appId: 196665
-bundleId: 914053
+bundleId: 915451
 url: https://kwlmi.shinyapps.io/onePager/
-when: 1500912598.93025
+when: 1501001868.41083
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: .cronBash.swp|cronBash|growthLouisville.csv|louisvilleRankings.csv|mainDataForOnePager.csv|medianWage.csv|mitLivingWageData.csv|one_pager_cron_job.R|stateUsData.csv|testings.R|Untitled.R

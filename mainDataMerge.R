@@ -15,3 +15,5 @@ allData <- full_join(allData, oesMetrosData, by = joinAllDataByThisVariable)
 allData <- full_join(allData, peerAreaCodes, by = joinAllDataByThisVariable)
 allData <- left_join(allData, allCurrentQcewData, by = "MSA")
 allData <- allData %>% select(10, 1, 3:14)
+
+

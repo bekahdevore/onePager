@@ -50,6 +50,7 @@ growthLouisville <- read.csv(textConnection(growthLouisville), check.names = FAL
 
 stateUsData <- getURL("https://docs.google.com/spreadsheets/d/e/2PACX-1vTO9CHzSOkZoM8jiVw6tWCjNWdlJW8w4GAaFO9jK_ZKiLlI_6mTSdk6Zeoe5Q9J7doj5vLKCKvqWQ2g/pub?gid=0&single=true&output=csv")
 stateUsData <- read.csv(textConnection(stateUsData), check.names = FALSE)  
+stateUsData$`Annual Median Wage (USD)` <- format(stateUsData$`Annual Median Wage (USD)`, big.mark = ",")
 
 
 shinyServer(function(input, output) {
@@ -89,7 +90,7 @@ shinyServer(function(input, output) {
   
   
   output$stateUsData <- DT::renderDataTable(
-    stateUsData, options = list(lengthChange = FALSE, pageLength = 15, paging = FALSE, autoWidth = FALSE,
+    stateUsData, options = list(lengthChange = FALSE, pageLength = 15, paging = FALSE, ordering = F, autoWidth = FALSE,
                                      columnDefs = list(list(className = 'dt-center', targets = "_all" 
                                      )), rowCallback = DT::JS(
                                        'function(row, data) {

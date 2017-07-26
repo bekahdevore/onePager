@@ -5,7 +5,7 @@ lfprRanking <- lfprRanking %>% select(1, 2, 14) %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Labor Force Participation Rate")
 colnames(lfprRanking)[2] <- "Value"
-lfprRanking$Datapoint <- paste0("$", lfprRanking$Datapoint)
+
 
 lfSizeRanking <- allData %>% 
   mutate("Rank" = rank(-`Labor Force Size`)) %>% 
@@ -20,6 +20,7 @@ medianHomeValueRanking <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Median Home Value")
 colnames(medianHomeValueRanking)[2] <- "Value"
+medianHomeValueRanking$Value <- paste0("$", format(medianHomeValueRanking$Value, big.mark = ","))
 
 medianHouseholdWageRanking <- allData %>% 
   mutate("Rank" = rank(-`Median Household Wage`)) %>% 
@@ -27,6 +28,7 @@ medianHouseholdWageRanking <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Median Household Wage")
 colnames(medianHouseholdWageRanking)[2] <- "Value"
+medianHouseholdWageRanking$Value <- paste0("$", format(medianHouseholdWageRanking$Value, big.mark = ",")) 
 
 medianMonthlyRentRank <- allData %>% 
   mutate("Rank" = rank(-`Median Monthly Rent`)) %>% 
@@ -34,6 +36,7 @@ medianMonthlyRentRank <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Median Monthly Rent")
 colnames(medianMonthlyRentRank)[2] <- "Value"
+medianMonthlyRentRank$Value <- paste0("$", format(medianMonthlyRentRank$Value, big.mark = ","))
 
 annualMedianWageRank <- allData %>% 
   mutate("Rank" = rank(-`Annual Median Wage (USD)`)) %>% 
@@ -41,6 +44,7 @@ annualMedianWageRank <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Annual Median Wage (USD)")
 colnames(annualMedianWageRank)[2] <- "Value"
+annualMedianWageRank$Value <- paste0("$", format(annualMedianWageRank$Value, big.mark = ","))
 
 populationRanking <- allData %>%
   mutate("Rank" = rank(-Population)) %>%
@@ -48,6 +52,7 @@ populationRanking <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Population")
 colnames(populationRanking)[2] <- "Value"
+populationRanking$Value <- paste0("$", format(populationRanking$Value, big.mark = ","))
 
 unemploymentRateRanking <- allData %>% 
   mutate("Rank" = rank(`Unemployment Rate`)) %>%
@@ -55,7 +60,7 @@ unemploymentRateRanking <- allData %>%
   #filter(MSA == "Louisville") %>%
   mutate(Datapoint = "Unemployment Rate")
 colnames(unemploymentRateRanking)[2] <- "Value"
-unemploymentRateRanking$Rank <- round(unemploymentRateRanking$Rank)
+
 
 allRankings <- rbind(lfprRanking, lfSizeRanking,
                             medianHomeValueRanking, medianHouseholdWageRanking,

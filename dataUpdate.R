@@ -1,5 +1,3 @@
-
-
 library(rvest)
 library(RCurl) # used to get URLs
 library(stringr) # used to replace specific values with other values 
@@ -22,6 +20,10 @@ source("mainDataMerge.R")
 source("rankings.R")
 source("stateUsData.R")
 
+allData$`Median Home Value` <- paste0("$",format(allData$`Median Home Value`, big.mark = ','))
+allData$`Median Household Wage` <- paste0("$", format(allData$`Median Household Wage`, big.mark = ","))
+allData$`Median Monthly Rent` <- paste0("$", format(allData$`Median Monthly Rent`, big.mark = ","))
+allData$`Annual Median Wage (USD)` <- paste0("$", format(allData$`Annual Median Wage (USD)`, big.mark = ","))
 
 ## Add commas to numbers
 
