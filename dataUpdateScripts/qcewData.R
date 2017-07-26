@@ -1,6 +1,6 @@
 ### BLS  QCEW DATA 
-qcewDataKentucky_2011 <- read.csv("2011_Kentucky.csv") 
-qcewDataLouisville_2011 <- read.csv("2011_LouisvilleMSA.csv")
+qcewDataKentucky_2011 <- read.csv("data_2011/2011_Kentucky.csv") 
+qcewDataLouisville_2011 <- read.csv("data_2011/2011_LouisvilleMSA.csv")
 
 qcewDataKY_2011 <- qcewDataFilter2011(qcewDataKentucky_2011)
 qcewDataLouisville_2011 <- qcewDataFilter2011(qcewDataLouisville_2011)
